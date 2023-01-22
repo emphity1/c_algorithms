@@ -48,6 +48,7 @@ void main() {
 
   //albero_altezza_foglie(mio_albero);
 
-   somma_conta_nodi(mio_albero);
+ //somma_conta_nodi(mio_albero);
    
+   stampa(mio_albero,12);
 }
