@@ -50,5 +50,8 @@ void main() {
 
  //somma_conta_nodi(mio_albero);
    
-   stampa(mio_albero,12);
+   //stampa(mio_albero,12); CercaDueNodiUguali.c
+
+   //verifica(mio_albero);
+   stampa(mio_albero);
 }

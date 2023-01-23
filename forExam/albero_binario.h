@@ -28,8 +28,10 @@ nodo_albero* aggiungi_figlio_destro(nodo_albero* n, int value);
 
 //int albero_altezza_foglie(albero a);
 //void somma_conta_nodi(albero a);
-void stampa(albero a,int v);
+//void stampa(albero a,int v);
 
+//void verifica(albero a);
 
+void stampa(albero a); //esisteFoglia destra
 
 #endif
