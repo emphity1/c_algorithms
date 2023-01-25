@@ -35,5 +35,6 @@
   ],
   "files.associations": {
     "albero_binario.h": "c"
-  }
+  },
+  "C_Cpp.errorSquiggles": "disabled"
 }
