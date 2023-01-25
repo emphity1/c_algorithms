@@ -28,7 +28,7 @@ int dfs(nodo*n){
     }
     return c;
 }
-
+//calcolo la componente piu piccola del grafo G
 int comp_min(grafo* g){
     int min=0;
     elem_nodi* en = g->nodi;
