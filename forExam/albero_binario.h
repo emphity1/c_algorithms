@@ -32,6 +32,13 @@ nodo_albero* aggiungi_figlio_destro(nodo_albero* n, int value);
 
 //void verifica(albero a);
 
-void stampa(albero a); //esisteFoglia destra
+//void stampa(albero a); //esisteFoglia destra
+
+//discendenti luglio 2022 B
+//void stampaDisc(albero a); //discendenti
+
+//eser.c
+void stampaNodi_figlioSolo(albero a);
+
 
 #endif

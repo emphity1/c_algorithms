@@ -30,7 +30,7 @@ void main() {
    // aggiungo i discendenti
    //
    
-   nodo_albero* l = aggiungi_figlio_sinistro(mio_albero,8);
+   nodo_albero* l = aggiungi_figlio_sinistro(mio_albero,2);
    nodo_albero* r = aggiungi_figlio_destro(mio_albero,4);
    nodo_albero* rl = aggiungi_figlio_sinistro(r,7);
    nodo_albero* rr = aggiungi_figlio_destro(r,6);
@@ -53,5 +53,9 @@ void main() {
    //stampa(mio_albero,12); CercaDueNodiUguali.c
 
    //verifica(mio_albero);
-   stampa(mio_albero);
+   //stampa(mio_albero);
+   //stampaDisc(mio_albero); //discendenti luglio 2020 B
+
+   //eser.c
+   stampaNodi_figlioSolo(mio_albero);
 }
