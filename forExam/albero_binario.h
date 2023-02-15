@@ -38,7 +38,12 @@ nodo_albero* aggiungi_figlio_destro(nodo_albero* n, int value);
 //void stampaDisc(albero a); //discendenti
 
 //eser.c
-void stampaNodi_figlioSolo(albero a);
+//void stampaNodi_figlioSolo(albero a);
+
+
+//distanzaNodo.c
+//void verifica(albero a); 
+void stampa_nodi_trovati(albero a);
 
 
 #endif

@@ -60,3 +60,4 @@ void stampaNodi_figlioSolo(albero a){
     printf("\nCi sono  %d nodi con un solo figlio\n", ris1);
     printf("\nCi sono  %d foglie\n", ris2);
 }
+
