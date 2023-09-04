@@ -22,7 +22,7 @@ void main() {
    // creo la radice 5
    //
    mio_albero = (nodo_albero*)malloc(sizeof(nodo_albero));
-   mio_albero->info = 8;
+   mio_albero->info = 4;
    mio_albero->parent = NULL;
    mio_albero->left = NULL;
    mio_albero->right = NULL; 
@@ -31,14 +31,14 @@ void main() {
    //
    
    nodo_albero* l = aggiungi_figlio_sinistro(mio_albero,4);
-   nodo_albero* r = aggiungi_figlio_destro(mio_albero,3);
-   nodo_albero* rl = aggiungi_figlio_sinistro(r,7);
-   nodo_albero* rr = aggiungi_figlio_destro(r,6);
+   nodo_albero* r = aggiungi_figlio_destro(mio_albero,4);
+   nodo_albero* rl = aggiungi_figlio_sinistro(r,4);
+   nodo_albero* rr = aggiungi_figlio_destro(r,4);
 
-   nodo_albero* ll = aggiungi_figlio_sinistro(l,10);
-   nodo_albero* lr = aggiungi_figlio_destro(l,9);
+   nodo_albero* ll = aggiungi_figlio_sinistro(l,4);
+   nodo_albero* lr = aggiungi_figlio_destro(l,4);
 
-   nodo_albero* lll = aggiungi_figlio_sinistro(ll,11);
+   nodo_albero* lll = aggiungi_figlio_sinistro(ll,4);
 /*
    printf("ricerca in postordine = %d\n", cerca_postordine(mio_albero,7));
    printf("ricerca in preordine = %d\n", cerca_preordine(mio_albero,7));
@@ -50,11 +50,13 @@ void main() {
 
  //somma_conta_nodi(mio_albero);
    
-   //stampa(mio_albero,12); CercaDueNodiUguali.c
+   //stampa(mio_albero); //CercaDueNodiUguali.c
+
+   //verificaFoglie(mio_albero,6); //contaEverificaFoglie.c
 
    //verifica(mio_albero);
    //stampa(mio_albero);
-   stampaDisc(mio_albero); //discendenti luglio 2020 B
+   //stampaDisc(mio_albero); //discendenti luglio 2020 B
 
    //eser.c
    //stampaNodi_figlioSolo(mio_albero);
@@ -63,6 +65,13 @@ void main() {
    //verifica(mio_albero);
    //stampa_nodi_trovati(mio_albero);
 
+   //verifica_profondita(mio_albero,4); //verifica_profondita.c
+
+   //cerca_nodi_figlio_solo(mio_albero,1); //cerca_figli.c
+
+   //verifica_test1(mio_albero); //test1.c
+
+   info_altezza(mio_albero); //esame-15-02-23.c
    
 
 }

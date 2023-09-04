@@ -26,25 +26,20 @@ nodo_albero* aggiungi_figlio_destro(nodo_albero* n, int value) {
 
 
 
-
-int cercaNodoUguali(albero a, int v){
-    
+int altezza(albero a){
     if(a==NULL) return 0;
+    int l = altezza(a->left);
+    int r = altezza(a->right);
 
-    if(a->info == v){
-        return 1;
-    }else{
-       return cercaNodoUguali(a->left,v) || cercaNodoUguali(a->right,v);
-    }
+    if (l>r) return l+1;
+    return r+1;
 }
 
-
-void stampa(albero a, int v){
-    int ris = cercaNodoUguali(a,v);
-    if(ris == 1){
-        printf("\nCi Sono 2 nodi consecutivi uguali\n");
+void verifica_profondita(albero a, int v){
+    int h = altezza(a);
+    if(h==v){
+        printf("\nL'albero è alto %d\n\n",v);
     }else{
-        printf("\n NON ci Sono 2 nodi consecutivi uguali\n");
+        printf("\nAltezza albero è diversa da %d\n\n",v);
     }
-    
 }

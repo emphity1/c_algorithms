@@ -25,26 +25,37 @@ nodo_albero* aggiungi_figlio_destro(nodo_albero* n, int value) {
 }
 
 
+//algoritmo che calcola la profondità(h) dell'albero
+// e cerca se esiste una nodo con campo info pari ad h
 
 
-int cercaNodoUguali(albero a, int v){
-    
+int altezza(albero a){
     if(a==NULL) return 0;
 
-    if(a->info == v){
-        return 1;
-    }else{
-       return cercaNodoUguali(a->left,v) || cercaNodoUguali(a->right,v);
-    }
+    int l = altezza(a->left);
+    int r = altezza(a->right);
+    if(l>r) return l+1;
+    return r+1;
+
 }
 
 
-void stampa(albero a, int v){
-    int ris = cercaNodoUguali(a,v);
-    if(ris == 1){
-        printf("\nCi Sono 2 nodi consecutivi uguali\n");
-    }else{
-        printf("\n NON ci Sono 2 nodi consecutivi uguali\n");
+int altezza_uguale_nodo(albero a, int h){
+    if(a == NULL) return 0;
+    if(a->info == h){
+        return 1;
     }
-    
+
+    return altezza_uguale_nodo(a->left,h) || altezza_uguale_nodo(a->right,h);
+}
+
+
+void verifica_test1(albero a){
+    int h = altezza(a);
+    if(altezza_uguale_nodo(a,h) == 1){
+        printf("\nC'è un nodo con campo info pari ad h=%d\n", h);
+    }else{
+        printf("\nNON c'è un nodo con campo info pari ad h=%d\n", h);
+
+    }
 }

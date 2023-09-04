@@ -23,28 +23,27 @@ nodo_albero* aggiungi_figlio_destro(nodo_albero* n, int value) {
    return n->right;
 
 }
-
-
-
-
-int cercaNodoUguali(albero a, int v){
-    
+int is_foglia(albero a){
     if(a==NULL) return 0;
+    if(a->left==NULL && a->right==NULL && ()) return 1;
+    return 0;
+}
 
-    if(a->info == v){
-        return 1;
-    }else{
-       return cercaNodoUguali(a->left,v) || cercaNodoUguali(a->right,v);
+int esisteFoglia(albero a, int v){
+    int count = 0;
+    if(a==NULL) return 0;
+    if(is_foglia(a->right) && is_foglia(a->left) &&){
+        count++;
     }
+    printf("\nRisultato del count: %d (nodo %d)", count, a->info);
+    return count + esisteFoglia(a->right,v) + esisteFoglia(a->right,v);
+} 
+
+void verificaFoglie(albero a, int v){
+    int ris = esisteFoglia(a,v);
+    printf("\nEsistono %d foglie con campo info %d\n",ris,v);
+
+
 }
 
 
-void stampa(albero a, int v){
-    int ris = cercaNodoUguali(a,v);
-    if(ris == 1){
-        printf("\nCi Sono 2 nodi consecutivi uguali\n");
-    }else{
-        printf("\n NON ci Sono 2 nodi consecutivi uguali\n");
-    }
-    
-}

@@ -45,7 +45,7 @@ int uguali(list* p) {
     int first=lista->info;
     while(lista->next->next!=NULL){
         lista=lista->next;
-        int last=lista->next->info;  
+        int last=lista->next+->info;  
         }
         if(first==last) return 1;
         return 0;

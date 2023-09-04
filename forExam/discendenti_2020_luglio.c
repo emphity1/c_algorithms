@@ -35,20 +35,19 @@ nodo_albero* aggiungi_figlio_destro(nodo_albero* n, int value) {
 
 }
 
+
+// questo conterà anche il nodo stesso
+// cioè se  nodo a->info ha 3 e ha 2 discendenti => 1(parente)+2(disc) = 3
 int discendenti(albero a){
 
-    if(a==NULL) return 0;
-    int disc = 0;
-    albero x = a->left;
-    while(x!=NULL){
-        disc++;
-        disc = disc + discendenti(x);
-        x = x->right;
-    }
-
-    return disc;
+   if( a == NULL) return 0;
+   int disc = 1;
+   return disc += discendenti(a->left)+discendenti(a->right);
 
 }
+
+
+
 
 int conta(albero a){
     if(a==NULL) return 0;
@@ -63,5 +62,5 @@ int conta(albero a){
 
 void stampaDisc(albero a){
     int ris = conta(a);
-    printf("\nDisc sono: %d", ris);
+    printf("\nDisc sono: %d \n", ris);
 }
