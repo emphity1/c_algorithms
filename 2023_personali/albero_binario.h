@@ -55,6 +55,17 @@ nodo_albero* aggiungi_figlio_destro(nodo_albero* n, int value);
 //void verifica_test1(albero a);
 
 
-void info_altezza(albero a); //esame-15-02-2023.c
+//void info_altezza(albero a); //esame-15-02-2023.c
+
+//int trova(albero a,int v); //ordine_crescente.c
+
+//void altezza(albero a);
+
+//void stampa_foglie(albero a); //calcolaFoglie.c
+
+//void somma(albero a); // sommaAlberi.c
+
+//int massimo(albero a); //valoreMassimo.c
+void compara(albero a);
 
 #endif
