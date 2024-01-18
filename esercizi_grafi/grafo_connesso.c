@@ -43,7 +43,9 @@ typedef struct struct_grafo {  // struttura corrispondente ad un grafo
 
 /* puoi scrivere qui eventuali funzioni di appoggio */
 
-/* componenti connesse*/
+
+
+/* Funzione di visita in profondità ricorsiva */
 void dfs(nodo* n){
     n->color=1;
     elem_arco* ea=n->archi;
@@ -59,21 +61,33 @@ void dfs(nodo* n){
 }
 
 
+/* Funzione principale per verificare se il grafo è connesso */
 int test(grafo_o* g) {
-      elem_nodo* en=g->nodi;
-      while(en!=NULL){
-          en->info->color=0;
-          en=en->next;
-      }
-      int contatore=0;
-      en=g->nodi;
-      while(en!=NULL){
-          if(en->info->color==0){
-              dfs(en->info);
-              contatore++;
-          }
-          en=en->next;
-      }
-      return contatore;
+    if (g->numero_nodi <= 1) {
+        return 1;  // Se il grafo non ha nodi o ha un solo nodo, ritorna true (grafo connesso)
+    }
 
+    // Inizializza tutti i nodi con il colore 0 (non visitato)
+    elem_nodo* current_node = g->nodi;
+    while (current_node != NULL) {
+        current_node->info->color = 0;
+        current_node = current_node->next;
+    }
+
+    // Imposta il colore del primo nodo a visitato
+    g->nodi->info->color = 1;
+
+    // Esegue la DFS partendo dal primo nodo
+    dfs(g->nodi->info);
+
+    // Verifica se tutti i nodi sono stati visitati
+    current_node = g->nodi;
+    while (current_node != NULL) {
+        if (current_node->info->color == 0) {
+            return 0;  // Se c'è almeno un nodo non visitato, il grafo non è connesso
+        }
+        current_node = current_node->next;
+    }
+
+    return 1;  // Tutti i nodi sono stati visitati, il grafo è connesso
 }

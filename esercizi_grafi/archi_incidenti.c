@@ -43,37 +43,42 @@ typedef struct struct_grafo {  // struttura corrispondente ad un grafo
 
 /* puoi scrivere qui eventuali funzioni di appoggio */
 
-/* componenti connesse*/
-void dfs(nodo* n){
-    n->color=1;
-    elem_arco* ea=n->archi;
-    while(ea!=NULL){
-        if(ea->info->from->color==0){
-            dfs(ea->info->from);
-        }
-        if(ea->info->to->color==0){
-            dfs(ea->info->to);
-        }
-        ea=ea->next;
-    }
-}
 
+
+
+
+/* Scrivi il codice in linguaggio C della funzione 
+   int test(grafo_o* g) che accetta come input un 
+   puntatore g ad un grafo realizzato tramite oggetti 
+   e riferimenti e ritorna 1 (true) se il grafo 
+   contiene un nodo che ha esattamente tre archi incidenti. 
+   Altrimenti la funzione ritorna 0 (false). Assumi 
+   che il grafo passato alla funzione non sia mai NULL. */
 
 int test(grafo_o* g) {
-      elem_nodo* en=g->nodi;
-      while(en!=NULL){
-          en->info->color=0;
-          en=en->next;
-      }
-      int contatore=0;
-      en=g->nodi;
-      while(en!=NULL){
-          if(en->info->color==0){
-              dfs(en->info);
-              contatore++;
-          }
-          en=en->next;
-      }
-      return contatore;
+    if (g->numero_nodi == 0) {
+        return 0;  // Se il grafo non ha nodi, ritorna false
+    }
 
+    elem_nodo* current_node = g->nodi;
+
+    while (current_node != NULL) {
+        int count_edges = 0;  // Contatore per il numero di archi incidenti
+
+        // Itera attraverso la lista di archi incidenti sul nodo corrente
+        elem_arco* current_edge = current_node->info->archi;
+        while (current_edge != NULL) {
+            count_edges++;
+            current_edge = current_edge->next;
+        }
+
+        // Se il nodo ha esattamente tre archi incidenti, ritorna true
+        if (count_edges == 3) {
+            return 1;  // true
+        }
+
+        current_node = current_node->next;
+    }
+
+    return 0;  // Nessun nodo con esattamente tre archi incidenti, ritorna false
 }
